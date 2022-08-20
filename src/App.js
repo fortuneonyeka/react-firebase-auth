@@ -1,5 +1,6 @@
 import './App.css';
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import {Container} from "react-bootstrap"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/navbar/Navbar";
 import Home from "./components/pages/Home";
@@ -12,7 +13,10 @@ import Login from "./components/navbar/Login";
 function App() {
   return (
     <div className="App">
-     <Router>
+      {/* <Container> */}
+        <SignUp/>
+      {/* </Container> */}
+     {/* <Router>
         <Navbar />
         <Routes>
          <Route path="/" element={<Home/>}/>
@@ -21,7 +25,7 @@ function App() {
           <Route path="/login" element={<Login/>}/>
           <Route path="/register" element={<SignUp/>}/>
         </Routes>
-      </Router>
+      </Router> */}
     </div>
   );
 }
