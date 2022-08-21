@@ -1,6 +1,6 @@
-import './App.css';
+import "./App.css";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import {Container} from "react-bootstrap"
+import { Container } from "react-bootstrap";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/navbar/Navbar";
 import Home from "./components/pages/Home";
@@ -9,24 +9,20 @@ import About from "./components/pages/About";
 import SignUp from "./components/navbar/SignUp";
 import Login from "./components/navbar/Login";
 
-
 function App() {
   return (
-    <div className="App">
-      {/* <Container> */}
-        <SignUp/>
-      {/* </Container> */}
-     {/* <Router>
+    <>
+      <Router>
         <Navbar />
         <Routes>
-         <Route path="/" element={<Home/>}/>
-         <Route path="/services" element={<Services/>}/>
-         <Route path="/about" element={<About/>}/>
-          <Route path="/login" element={<Login/>}/>
-          <Route path="/register" element={<SignUp/>}/>
+          <Route path="/" element={<Home />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<SignUp />} />
         </Routes>
-      </Router> */}
-    </div>
+      </Router>
+    </>
   );
 }
 
