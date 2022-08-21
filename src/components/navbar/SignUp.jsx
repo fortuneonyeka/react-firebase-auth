@@ -1,44 +1,81 @@
 import React,{useRef, useState} from 'react'
-import {Form, Card, Button, Container} from "react-bootstrap"
+import { Link } from "react-router-dom"
+import {Form, Card, Button} from "react-bootstrap"
+// import { useAuth} from "../../context/AuthContext"
 import {signup,login, logout, useAuth} from "../../firebase"
 
-const SignUp = () => {
-  const emailRef = useRef()
-  const passwordRef = useRef()
-  const passwordConfirmRef = useRef()
+const SignUp =() =>  {
+
+const [loading, setLoading] = useState(false)
+  const currentUser = useAuth
+
+  const emailRef = useRef();
+   const passwordRef = useRef();
+
+
+   async function handleSignup() {
+     setLoading(true)
+    try {
+      await signup(emailRef.current.value, passwordRef.current.value)
+    } catch {
+       alert("Error")
+     }
+     setLoading(false)
+   }
+
+   async function handleLogin() {
+     setLoading(true)
+     try {
+       await login(emailRef.current.value, passwordRef.current.value)
+     } catch {
+       alert("Error!")
+     }
+     setLoading(false)
+   }
+
+   async function handleLogout() {
+     setLoading(true)
+     try {
+       await logout();
+     } catch {
+       alert("Error!")
+     }
+    setLoading(false)
+   }
 
   return (
-    <Container className="d-flex align-items-center justify-content-center "
-    style={{minHeight:"100vh"}}
-    >
-      <div className="w-100 " style={{maxWidth:"400px"}}>
-    <Card className="sign-up">
-      <Card.Body>
-        <h2 className="text-center mb-4">Sign Up</h2>
-        <Form>
-          <Form.Group id="email">
-            <Form.Label>Email</Form.Label>
-            <Form.Control type="email" ref={emailRef} required/>
-          </Form.Group>
-          <Form.Group id="password">
-            <Form.Label>Password</Form.Label>
-            <Form.Control type="password" ref={passwordRef} required/>
-          </Form.Group>
-          <Form.Group id="password-confirm">
-            <Form.Label>Password Confirmation</Form.Label>
-            <Form.Control type="password" ref={passwordConfirmRef} required/>
-          </Form.Group>
-          <Button className="w-100 mt-4 py-3" type="submit">Sign Up</Button>
-        </Form>
-      </Card.Body>
-    </Card>
-   
-   <div className="w-100 text-center mt-2 ">
-      Already have an account? Log in
-   </div>
-   </div>
+    
+
+    
+    <>
      
-    </Container>
+    <div className="sign-up-containter col-4">
+      <h3 className="d-flex justify-content-center">Sign Up</h3>
+
+      <div className="form-group">
+        <label>Email</label>
+        <input type="email" className="form-control" placeholder="Email@" />
+      </div>
+      <div className="form-group">
+        <label>Password</label>
+        <input
+          type="password"
+          className="form-control"
+          placeholder="Password"
+        />
+      </div>
+
+      <div className="d-flex justify-content-center mt-4">
+        <button type="button" className="btn btn-primary btn-lg btn-block py-3 log-in">
+          Login
+        </button>
+      </div>
+      <div className="cta">Already have an account? <Link className="text-decoration-none mx-3 link-success" to="/login">Log in</Link></div>
+    </div>
+  
+     
+    </>
+   
     
 
       
