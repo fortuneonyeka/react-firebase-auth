@@ -1,8 +1,9 @@
 import React from 'react'
+import { Link } from "react-router-dom"
 
 const Login = () => {
   return (
-    <div className="col-4">
+    <div className="sign-up-containter col-4">
       <h3 className="d-flex justify-content-center">Login</h3>
 
       <div className="form-group">
@@ -19,10 +20,11 @@ const Login = () => {
       </div>
 
       <div className="d-flex justify-content-center mt-4">
-        <button type="button" className="btn btn-primary btn-lg btn-block py-3">
+        <button type="button" className="btn btn-primary btn-lg btn-block py-3 log-in">
           Login
         </button>
       </div>
+      <div className="cta">New user? <Link className="text-decoration-none mx-3 link-success" to="/register">Sign Up</Link> </div>
     </div>
   )
 }
