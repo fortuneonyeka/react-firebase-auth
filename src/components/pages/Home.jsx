@@ -14,13 +14,13 @@ const Home = () => {
         </div>
       <div className="right-items">
       <img src={Ikb} alt="" />
-      <div >
+     
       <p className="inner-item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores officiis, exercitationem repellendus eligendi atque ea nobis molestias ipsa. Consequuntur, pariatur.</p>
-      <div>
+      
         <p className="inner-item">Lorem ipsum dolor sit amet.</p>
+      
       </div>
-      </div>
-      </div>
+     
       </div>
     </div>
   )

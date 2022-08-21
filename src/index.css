@@ -121,9 +121,9 @@ h1 {
   border-radius: 12px;
 }
 
-.right-items {
+/* .right-items {
   display: flex;
-}
+} */
 
 .inner-item {
   padding: 10px;
@@ -136,11 +136,9 @@ h1 {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   border-radius: 10px;
-  /* width: 300px; */
-
+  bottom: 70%;
+  left: 70%;
   background: #ffffff;
-  /* Shadow/Card */
-
   box-shadow: 0px 15px 35px rgba(50, 50, 93, 0.1),
     0px 5px 15px rgba(0, 0, 0, 0.07);
 }
