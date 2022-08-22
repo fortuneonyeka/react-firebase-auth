@@ -1,43 +1,37 @@
-import React from 'react'
-import { Link } from "react-router-dom"
-import Home from "../pages/Home"
-import Logo from "../../assets/images/Logo/Retink.png"
-import LogoVector from "../../assets/images/Logo/logo-01.png"
-import mainlogo from "../../assets/images/Logo/logo-wo-subtitle.png"
+import React from "react";
+import { Link } from "react-router-dom";
+import mainlogo from "../../assets/images/Logo/logo-wo-subtitle.png";
 
 const Navbar = () => {
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light ">
         <div className="logo">
-       <Link to="/"> <img src={mainlogo} alt="" className="logo-vector"/></Link>
-       
+          <Link to="/">
+            {" "}
+            <img src={mainlogo} alt="" className="logo-vector" />
+          </Link>
         </div>
-        
+
         <div className="container">
           <div className="page-links">
-          <Link to="/" className="navbar-brand nav-item text-muted">
-            Home
-          </Link>
-          <Link to="/services" className="navbar-brand nav-item ">
-            Services
-          </Link>
-          <Link to="/about" className="navbar-brand nav-item text-muted">
-            About
-          </Link>
-         
-            
-          
+            <Link to="/" className="navbar-brand nav-item text-muted">
+              Home
+            </Link>
+            <Link to="/services" className="navbar-brand nav-item ">
+              Services
+            </Link>
+            <Link to="/about" className="navbar-brand nav-item text-muted">
+              About
+            </Link>
           </div>
+        <Link  to="/login" >
+         <h4 className="btn btn-primary login-btn">Login</h4> 
+        </Link>
         </div>
-                <Link to="/login" className=" nav-link p-2  text-white">
-                  Login
-                </Link>
-             
-      </nav> 
-      {/* <Home/> */}
+      </nav>
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
