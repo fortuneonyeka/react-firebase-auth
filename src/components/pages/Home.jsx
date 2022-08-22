@@ -19,7 +19,7 @@ const Home = () => {
           </div>
         </div>
         <div>
-          <img className="image"  src={Ikb} alt="" />
+          <img className="image" src={Ikb} alt="" />
 
           <p className="inner-item">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
